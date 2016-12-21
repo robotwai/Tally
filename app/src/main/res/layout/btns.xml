@@ -1,0 +1,54 @@
+<com.example.lz.tally.customview.FloatingActionButtonPlus
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/FabPlus"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="55dp"
+    app:layout_behavior="com.example.lz.tally.customview.FabBehavior"
+    app:mBackgroundColor="#87000000"
+    app:switchFabColor="@color/colorBlue"
+    app:switchFabIcon="@mipmap/ic_add_white_48dp">
+
+    <com.example.lz.tally.customview.FabTagLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:tagText="Text">
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_text"
+            app:backgroundTint="@color/color_yellow"
+            app:fabSize="mini" />
+    </com.example.lz.tally.customview.FabTagLayout>
+
+    <com.example.lz.tally.customview.FabTagLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:tagText="Voice">
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_voice"
+            app:backgroundTint="@color/color_green_1"
+            app:fabSize="mini" />
+    </com.example.lz.tally.customview.FabTagLayout>
+
+
+    <com.example.lz.tally.customview.FabTagLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:tagText="Photo">
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_photo"
+            app:backgroundTint="@color/color_gray"
+            app:fabSize="mini" />
+    </com.example.lz.tally.customview.FabTagLayout>
+
+
+</com.example.lz.tally.customview.FloatingActionButtonPlus>

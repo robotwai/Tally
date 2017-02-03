@@ -1,30 +1,20 @@
-package com.example.lz.tally;
+package com.example.lz.tally.activity;
 
-import android.app.Activity;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
-import com.example.lz.tally.Bean.DataEntity;
+import com.example.lz.tally.R;
 import com.example.lz.tally.customview.FabTagLayout;
 import com.example.lz.tally.customview.FloatingActionButtonPlus;
-import com.example.lz.tally.customview.LineChartView;
 import com.example.lz.tally.fragment.MainFragment;
 import com.example.lz.tally.fragment.SettingFragment;
 import com.example.lz.tally.fragment.StatisticsFragment;
@@ -38,13 +28,8 @@ import com.iflytek.cloud.SpeechError;
 import com.iflytek.cloud.SpeechRecognizer;
 import com.iflytek.cloud.ui.RecognizerDialog;
 
-import org.joda.time.DateTime;
-
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.List;
 
 public class MainActivity extends BaseActivity {
     private ViewPager mPager;

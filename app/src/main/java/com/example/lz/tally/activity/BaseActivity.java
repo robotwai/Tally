@@ -1,4 +1,4 @@
-package com.example.lz.tally;
+package com.example.lz.tally.activity;
 
 import android.annotation.TargetApi;
 import android.graphics.Color;
@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.example.lz.tally.R;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 /**

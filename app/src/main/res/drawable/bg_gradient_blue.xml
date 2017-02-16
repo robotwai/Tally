@@ -3,9 +3,9 @@
 
 	<gradient
 
-	android:startColor="@color/colorBlue"
+	android:startColor="@color/colorMain"
 
-	android:endColor="#01232f"
+	android:endColor="@color/colorMain"
 
 	android:angle="270" />
 

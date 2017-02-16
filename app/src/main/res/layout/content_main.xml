@@ -12,7 +12,7 @@
 	android:paddingTop="@dimen/activity_vertical_margin"
 	android:background="@color/colorMain"
 	app:layout_behavior="@string/appbar_scrolling_view_behavior"
-	tools:context="com.example.lz.tally.MainActivity"
+	tools:context="com.example.lz.tally.activity.MainActivity"
 	tools:showIn="@layout/activity_main">
 
 

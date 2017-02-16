@@ -1,12 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-			  android:orientation="vertical"
-			  android:layout_width="match_parent"
-			  android:layout_height="match_parent">
-	<android.support.v7.widget.RecyclerView
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:moneytextview="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@drawable/bg_gradient_blue">
+	<LinearLayout
+		android:id="@+id/ll_top"
 		android:layout_width="match_parent"
-		android:layout_height="100dp"/>
-	<CheckBox
+		android:layout_height="wrap_content"
+		android:layout_alignParentTop="true"
+		android:orientation="vertical"
+		android:background="@color/colorMain">
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="65dp"
+			android:orientation="vertical"
+			android:layout_marginBottom="20dp"
+			>
+
+			<com.example.lz.tally.customview.MoneyTextView
+				android:id="@+id/main_moneyTextView"
+				android:layout_width="130dp"
+				android:layout_height="65dp"
+				android:layout_marginLeft="10dp"
+				android:layout_gravity="right"
+				android:gravity="end|center_vertical"
+				moneytextview:integerFontSize="32sp"
+				android:textColor="@android:color/white"
+				moneytextview:decimalPlaceFontSize="32sp"/>
+		</LinearLayout>
+
+		<include layout="@layout/bill_type_1"/>
+	</LinearLayout>
+
+	<RadioGroup
+		android:id="@+id/rg_pay_type"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:layout_marginBottom="40dp"
+		android:layout_above="@+id/main_moneySKView">
+		<RadioButton
+			android:id="@+id/rb_ali"
+			android:text="@string/pay_type_1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="@android:color/white"
+			android:buttonTint="@android:color/white"
+			/>
+		<RadioButton
+			android:id="@+id/rb_wx"
+			android:text="@string/pay_type_2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="@android:color/white"
+			android:buttonTint="@android:color/white"
+
+			/>
+		<RadioButton
+			android:id="@+id/rb_cash"
+			android:text="@string/pay_type_3"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="@android:color/white"
+			android:buttonTint="@android:color/white"
+
+			/>
+
+	</RadioGroup>
+	<com.example.lz.tally.customview.MoneySKView
+		android:id="@+id/main_moneySKView"
+		android:layout_alignParentBottom="true"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"/>
-</LinearLayout>
+
+</RelativeLayout>

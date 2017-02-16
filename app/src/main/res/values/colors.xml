@@ -5,6 +5,7 @@
 	<color name="colorAccent">#FF4081</color>
 	<color name="colorMain">#01786B</color>
 	<color name="colorBlue">#01aae7</color>
+	<color name="colorTranslate">#00ffffff</color>
 
 	<!--首页按钮-->
 	<color name="color_yellow">#ff9800</color>
@@ -12,4 +13,8 @@
 	<color name="color_green_1">#4BB7A7</color>
 	<color name="color_gray">#818aa7</color>
 	<color name="color_blue_2">#468cb7</color>
+
+	<color name="type_no_check">#ffffff</color>
+	<color name="type_checked">#013963</color>
+	<color name="type_checked_background">#FDF2CB</color>
 </resources>

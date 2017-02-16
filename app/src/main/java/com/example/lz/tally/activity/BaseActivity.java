@@ -17,6 +17,7 @@ import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 public class BaseActivity extends AppCompatActivity {
     public final String TAG = getClass().getSimpleName();
+    SystemBarTintManager tintManager;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,10 +27,11 @@ public class BaseActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
                 WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         setTranslucentStatus(true);
-        SystemBarTintManager tintManager = new SystemBarTintManager(this);
+        tintManager = new SystemBarTintManager(this);
         tintManager.setStatusBarTintEnabled(true);
 //        tintManager.setNavigationBarTintEnabled(true);
         tintManager.setTintColor(getResources().getColor(R.color.colorMain));
+
     }
 
     @TargetApi(19)

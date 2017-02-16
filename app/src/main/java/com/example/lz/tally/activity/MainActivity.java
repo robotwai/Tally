@@ -1,5 +1,7 @@
 package com.example.lz.tally.activity;
 
+import android.app.ActivityOptions;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.Fragment;
@@ -44,8 +46,6 @@ public class MainActivity extends BaseActivity {
     // 用HashMap存储听写结果
     private HashMap<String, String> mIatResults = new LinkedHashMap<String, String>();
 
-    private EditText mResultText;
-    private Toast mToast;
     // 引擎类型
     private String mEngineType = SpeechConstant.TYPE_CLOUD;
     @Override
@@ -75,7 +75,7 @@ public class MainActivity extends BaseActivity {
         bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
         mActionButtonPlus = (FloatingActionButtonPlus) findViewById(R.id.FabPlus);
         bottomNavigationBar
-                .addItem(new BottomNavigationItem(R.mipmap.home_recent, "Recent"))
+                .addItem(new BottomNavigationItem(R.mipmap.home_recent, "RecentRecent"))
                 .addItem(new BottomNavigationItem(R.mipmap.home_statistics, "Statistics"))
                 .addItem(new BottomNavigationItem(R.mipmap.home_setting, "Setting"))
                 .initialise();
@@ -107,6 +107,9 @@ public class MainActivity extends BaseActivity {
                 Toast.makeText(MainActivity.this, "Click btn" + position, Toast.LENGTH_SHORT).show();
                 switch (position){
                     case 0:
+                        Intent intent =new Intent(MainActivity.this,EditBillActivity.class);
+                        startActivity(intent);
+                        overridePendingTransition(R.anim.ac_enter,R.anim.ac_out);
                         break;
                     case 1:
                         startVoice();

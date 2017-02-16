@@ -14,6 +14,8 @@ import com.tencent.bugly.Bugly;
 import com.tencent.bugly.beta.Beta;
 import com.tencent.tinker.loader.app.DefaultApplicationLike;
 
+import static com.facebook.react.common.ApplicationHolder.getApplication;
+
 /**
  * Created by liz on 17-2-3.
  */
@@ -24,11 +26,8 @@ public class TallyapplicationLike extends DefaultApplicationLike{
     private static Application instance;
     public TallyapplicationLike(Application application, int tinkerFlags,
                                 boolean tinkerLoadVerifyFlag, long applicationStartElapsedTime,
-                                long applicationStartMillisTime, Intent tinkerResultIntent, Resources[] resources,
-                                ClassLoader[] classLoader, AssetManager[] assetManager) {
-        super(application, tinkerFlags, tinkerLoadVerifyFlag, applicationStartElapsedTime,
-                applicationStartMillisTime, tinkerResultIntent, resources, classLoader,
-                assetManager);
+                                long applicationStartMillisTime, Intent tinkerResultIntent) {
+        super(application, tinkerFlags, tinkerLoadVerifyFlag, applicationStartElapsedTime, applicationStartMillisTime, tinkerResultIntent);
         instance = application;
     }
 

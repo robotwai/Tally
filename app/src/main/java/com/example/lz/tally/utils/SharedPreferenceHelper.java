@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 import com.example.lz.tally.TallyApplication;
+import com.example.lz.tally.TallyapplicationLike;
 
 /**
  * Created by liz on 16-8-8.
@@ -24,7 +25,7 @@ public class SharedPreferenceHelper implements SharedPreferences.OnSharedPrefere
     }
 
     private static SharedPreferences getSharedPreferences() {
-        return PreferenceManager.getDefaultSharedPreferences(TallyApplication.getInstance());
+        return PreferenceManager.getDefaultSharedPreferences(TallyapplicationLike.getInstance());
     }
 
     @Override

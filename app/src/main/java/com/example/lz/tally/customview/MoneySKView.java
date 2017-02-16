@@ -4,8 +4,10 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.lz.tally.R;
@@ -25,28 +27,28 @@ public class MoneySKView extends FrameLayout {
 
     private static final String LOG_TAG = "MoneySKView";
 
-    private TextView num1TV;
-    private TextView num2TV;
-    private TextView num3TV;
-    private TextView num4TV;
-    private TextView num5TV;
-    private TextView num6TV;
-    private TextView num7TV;
-    private TextView num8TV;
-    private TextView num9TV;
-    private TextView num0TV;
-    private TextView dotTV;
+    private Button num1TV;
+    private Button num2TV;
+    private Button num3TV;
+    private Button num4TV;
+    private Button num5TV;
+    private Button num6TV;
+    private Button num7TV;
+    private Button num8TV;
+    private Button num9TV;
+    private Button num0TV;
+    private Button dotTV;
     private TextView currencyTV;
     private TextView currencyNameTV;
     private LinearLayout currencyWrapper;
-    private TextView addLayout;
-    private TextView equalLayout;
-    private TextView backspaceTv;
-    private TextView okTV;
+    private Button addLayout;
+    private Button equalLayout;
+    private Button backspaceTv;
+    private Button okTV;
     private String moneyStr;
 
     private View.OnClickListener softkeyboardClickListener;
-    private MoneySKTextViewListener moneySKTextViewListener;
+    private MoneySKButtonListener moneySKButtonListener;
     private MoneySKGlobalActionListener moneySKGlobalActionListener;
     private Map<GlobalActionType, View> globalActionsMap = new HashMap<>();
 
@@ -67,24 +69,24 @@ public class MoneySKView extends FrameLayout {
     }
 
     private void initNode() {
-        num1TV = (TextView) findViewById(R.id.billSK_one);
-        num2TV = (TextView) findViewById(R.id.billSK_two);
-        num3TV = (TextView) findViewById(R.id.billSK_three);
-        num4TV = (TextView) findViewById(R.id.billSK_four);
-        num5TV = (TextView) findViewById(R.id.billSK_five);
-        num6TV = (TextView) findViewById(R.id.billSK_six);
-        num7TV = (TextView) findViewById(R.id.billSK_seven);
-        num8TV = (TextView) findViewById(R.id.billSK_eight);
-        num9TV = (TextView) findViewById(R.id.billSK_nine);
-        num0TV = (TextView) findViewById(R.id.billSK_zero);
-        dotTV = (TextView) findViewById(R.id.billSK_dot);
-        backspaceTv = (TextView) findViewById(R.id.billSK_backspace);
+        num1TV = (Button) findViewById(R.id.billSK_one);
+        num2TV = (Button) findViewById(R.id.billSK_two);
+        num3TV = (Button) findViewById(R.id.billSK_three);
+        num4TV = (Button) findViewById(R.id.billSK_four);
+        num5TV = (Button) findViewById(R.id.billSK_five);
+        num6TV = (Button) findViewById(R.id.billSK_six);
+        num7TV = (Button) findViewById(R.id.billSK_seven);
+        num8TV = (Button) findViewById(R.id.billSK_eight);
+        num9TV = (Button) findViewById(R.id.billSK_nine);
+        num0TV = (Button) findViewById(R.id.billSK_zero);
+        dotTV = (Button) findViewById(R.id.billSK_dot);
+        backspaceTv = (Button) findViewById(R.id.billSK_backspace);
         currencyWrapper = (LinearLayout) findViewById(R.id.billSK_currencyWrapper);
         currencyTV = (TextView) findViewById(R.id.billSK_currency);
         currencyNameTV = (TextView) findViewById(R.id.billSK_currencyName);
-        addLayout = (TextView) findViewById(R.id.billSK_add);
-        equalLayout = (TextView) findViewById(R.id.billSK_equal);
-        okTV = (TextView) findViewById(R.id.billSK_ok);
+        addLayout = (Button) findViewById(R.id.billSK_add);
+        equalLayout = (Button) findViewById(R.id.billSK_equal);
+        okTV = (Button) findViewById(R.id.billSK_ok);
     }
 
     private void initEventListener() {
@@ -93,48 +95,48 @@ public class MoneySKView extends FrameLayout {
             public void onClick(View v) {
                 switch (v.getId()) {
                     case R.id.billSK_one:
-                        moneySKTextViewListener.clickNum(1);
+                        moneySKButtonListener.clickNum(1);
                         break;
                     case R.id.billSK_two:
-                        moneySKTextViewListener.clickNum(2);
+                        moneySKButtonListener.clickNum(2);
                         break;
                     case R.id.billSK_three:
-                        moneySKTextViewListener.clickNum(3);
+                        moneySKButtonListener.clickNum(3);
                         break;
                     case R.id.billSK_four:
-                        moneySKTextViewListener.clickNum(4);
+                        moneySKButtonListener.clickNum(4);
                         break;
                     case R.id.billSK_five:
-                        moneySKTextViewListener.clickNum(5);
+                        moneySKButtonListener.clickNum(5);
                         break;
                     case R.id.billSK_six:
-                        moneySKTextViewListener.clickNum(6);
+                        moneySKButtonListener.clickNum(6);
                         break;
                     case R.id.billSK_seven:
-                        moneySKTextViewListener.clickNum(7);
+                        moneySKButtonListener.clickNum(7);
                         break;
                     case R.id.billSK_eight:
-                        moneySKTextViewListener.clickNum(8);
+                        moneySKButtonListener.clickNum(8);
                         break;
                     case R.id.billSK_nine:
-                        moneySKTextViewListener.clickNum(9);
+                        moneySKButtonListener.clickNum(9);
                         break;
                     case R.id.billSK_zero:
-                        moneySKTextViewListener.clickNum(0);
+                        moneySKButtonListener.clickNum(0);
                         break;
                     case R.id.billSK_dot:
-                        moneySKTextViewListener.clickNumAction(NumActionType.DOT);
+                        moneySKButtonListener.clickNumAction(NumActionType.DOT);
                         break;
                     case R.id.billSK_backspace:
-                        moneySKTextViewListener.clickNumAction(NumActionType.BACKSPACE);
+                        moneySKButtonListener.clickNumAction(NumActionType.BACKSPACE);
                         break;
                     case R.id.billSK_add:
                         showEqualBtn();
-                        moneySKTextViewListener.clickNumAction(NumActionType.ADD);
+                        moneySKButtonListener.clickNumAction(NumActionType.ADD);
                         break;
                     case R.id.billSK_equal:
                         showOkBtn();
-                        moneySKTextViewListener.clickNumAction(NumActionType.EQUAL);
+                        moneySKButtonListener.clickNumAction(NumActionType.EQUAL);
                         break;
                     case R.id.billSK_ok:
                         moneySKGlobalActionListener.clickGlobalAction(GlobalActionType.OK);
@@ -171,8 +173,8 @@ public class MoneySKView extends FrameLayout {
         globalActionsMap.put(GlobalActionType.CURRENCY, currencyWrapper);
     }
 
-    public void setMoneySKTextViewListener(MoneySKTextViewListener moneySKTextViewListener) {
-        this.moneySKTextViewListener = moneySKTextViewListener;
+    public void setMoneySKButtonListener(MoneySKButtonListener moneySKButtonListener) {
+        this.moneySKButtonListener = moneySKButtonListener;
     }
 
     public void setMoneySKGlobalActionListener(MoneySKGlobalActionListener moneySKGlobalActionListener) {
@@ -255,7 +257,7 @@ public class MoneySKView extends FrameLayout {
         EQUAL
     }
 
-    public interface MoneySKTextViewListener {
+    public interface MoneySKButtonListener {
 
         public void clickNum(int num);
 

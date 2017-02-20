@@ -43,4 +43,6 @@ dependencies {
     compile 'joda-time:joda-time:2.9.4'
     compile files('libs/Msc.jar')
     compile files('libs/Sunflower.jar')
+    compile "com.android.support:multidex:1.0.1" // 多dex配置
+    compile 'com.tencent.bugly:crashreport_upgrade:latest.release' // 升级SDK
 }
